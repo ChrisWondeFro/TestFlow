@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import { Database, Brain, Server, Globe, Lock, Zap, Copy, CheckCheck } from "lucide-react"
+import { Database, Brain, Server, Globe, Zap, Copy, CheckCheck } from "lucide-react"
 
 export function TechArchitecture() {
   const [activeNode, setActiveNode] = useState<string | null>(null)
@@ -35,7 +35,7 @@ export function TechArchitecture() {
       color: "bg-blue-500",
       position: { x: "50%", y: "20%" },
       size: 60,
-      description: "Secure, scalable storage for test data and results",
+      description: "Scalable storage for test data and results",
       connections: ["ai-engine", "analytics-engine", "api-gateway"],
     },
     {
@@ -55,8 +55,8 @@ export function TechArchitecture() {
       color: "bg-green-500",
       position: { x: "50%", y: "60%" },
       size: 60,
-      description: "Secure, RESTful interface for all TestFlow services",
-      connections: ["ai-engine", "data-store", "analytics-engine", "client-apps", "security"],
+      description: "RESTful interface for all TestFlow services",
+      connections: ["ai-engine", "data-store", "analytics-engine", "client-apps"],
     },
     {
       id: "client-apps",
@@ -66,16 +66,6 @@ export function TechArchitecture() {
       position: { x: "20%", y: "80%" },
       size: 60,
       description: "Web, mobile, and desktop interfaces",
-      connections: ["api-gateway"],
-    },
-    {
-      id: "security",
-      name: "Security Layer",
-      icon: Lock,
-      color: "bg-red-500",
-      position: { x: "80%", y: "80%" },
-      size: 60,
-      description: "Authentication, authorization, and data protection",
       connections: ["api-gateway"],
     },
   ]
@@ -218,7 +208,7 @@ const test = await abTestWorkflow.run({
         <div>
           <h3 className="text-2xl font-bold mb-4">Technical Architecture</h3>
           <p className="text-gray-600 mb-6">
-            TestFlow is built on a modern, scalable architecture designed for reliability, security, and performance.
+            TestFlow is built on a modern, scalable architecture designed for reliability and performance.
             Our API-first approach makes integration seamless with your existing tools and workflows.
           </p>
 

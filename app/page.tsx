@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   ArrowRight,
   Beaker,
@@ -16,12 +15,10 @@ import {
   BarChart3,
   Code,
   CheckCircle,
-  Star,
   Play,
   Coffee,
   Heart,
   TrendingUp,
-  Shield,
   Sparkles,
 } from "lucide-react"
 
@@ -103,35 +100,6 @@ export default function TestFlowLanding() {
       icon: Code,
       title: "API-First Design",
       description: "Integrate with any tool or platform you already use",
-    },
-    {
-      icon: Shield,
-      title: "Privacy by Design",
-      description: "Your data stays yours - we never share or sell it",
-    },
-  ]
-
-  const testimonials = [
-    {
-      name: "Sarah Chen",
-      role: "Product Manager",
-      company: "TechCorp",
-      quote: "TestFlow helped us increase conversion rates by 34% in just two weeks.",
-      avatar: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Dr. Michael Rodriguez",
-      role: "Research Scientist",
-      company: "BioLab",
-      quote: "Finally, a tool that makes experimental design accessible to everyone.",
-      avatar: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Emma Thompson",
-      role: "Marketing Director",
-      company: "GrowthCo",
-      quote: "We've run 50+ tests and saved hundreds of hours on analysis.",
-      avatar: "/placeholder.svg?height=40&width=40",
     },
   ]
 
@@ -238,7 +206,7 @@ export default function TestFlowLanding() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-lg px-8 py-4">
-              Start Testing Free
+              Start Testing
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-4">
@@ -345,7 +313,7 @@ export default function TestFlowLanding() {
           >
             <h2 className="text-4xl font-bold mb-4">Real-World Use Cases</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how people are using TestFlow to answer their most important questions
+              See how people could use TestFlow to answer their most important questions
             </p>
           </motion.div>
 
@@ -438,169 +406,6 @@ export default function TestFlowLanding() {
       </section>
       */}
       
-      {/* Social Proof */}
-      <section className="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">Trusted by Innovators</h2>
-            <p className="text-xl text-gray-600">Join thousands of researchers, marketers, and curious minds</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="p-6 bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-                  <CardContent className="p-0">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-gray-700 mb-4 italic">"{testimonial.quote}"</p>
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={testimonial.avatar || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        className="w-10 h-10 rounded-full"
-                      />
-                      <div>
-                        <div className="font-semibold">{testimonial.name}</div>
-                        <div className="text-sm text-gray-600">
-                          {testimonial.role}, {testimonial.company}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { number: "10,000+", label: "Tests Created" },
-              { number: "1M+", label: "Data Points Analyzed" },
-              { number: "500+", label: "Hours Saved Daily" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-indigo-600 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600">Start free, scale as you grow</p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Starter",
-                price: "Free",
-                description: "Perfect for personal experiments",
-                features: ["5 tests per month", "Basic analytics", "Email support"],
-                cta: "Get Started",
-                popular: false,
-              },
-              {
-                name: "Professional",
-                price: "$29",
-                description: "For teams and businesses",
-                features: ["Unlimited tests", "Advanced analytics", "Priority support", "Team collaboration"],
-                cta: "Start Free Trial",
-                popular: true,
-              },
-              {
-                name: "Enterprise",
-                price: "Custom",
-                description: "For large organizations",
-                features: ["Custom integrations", "Dedicated support", "SLA guarantee", "Advanced security"],
-                cta: "Contact Sales",
-                popular: false,
-              },
-            ].map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-indigo-600">
-                    Most Popular
-                  </Badge>
-                )}
-                <Card
-                  className={`p-6 h-full ${plan.popular ? "border-indigo-500 border-2 shadow-xl" : "border-gray-200"}`}
-                >
-                  <CardContent className="p-0">
-                    <div className="text-center mb-6">
-                      <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                      <div className="text-4xl font-bold mb-2">
-                        {plan.price}
-                        {plan.price !== "Free" && plan.price !== "Custom" && (
-                          <span className="text-lg text-gray-600">/month</span>
-                        )}
-                      </div>
-                      <p className="text-gray-600">{plan.description}</p>
-                    </div>
-                    <ul className="space-y-3 mb-6">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5 text-green-500" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      className={`w-full ${plan.popular ? "bg-indigo-600 hover:bg-indigo-700" : ""}`}
-                      variant={plan.popular ? "default" : "outline"}
-                    >
-                      {plan.cta}
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -612,15 +417,14 @@ export default function TestFlowLanding() {
           >
             <h2 className="text-5xl font-bold mb-6">Start Testing in 60 Seconds</h2>
             <p className="text-xl mb-8 opacity-90">
-              Join thousands of innovators who've already discovered the power of data-driven decisions
+              Discover the power of data-driven decisions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <Input placeholder="Enter your email" className="bg-white text-gray-900 border-0" />
               <Button size="lg" className="bg-white text-indigo-600 hover:bg-gray-100">
-                Get Started Free
+                Get Started
               </Button>
             </div>
-            <p className="text-sm mt-4 opacity-75">No credit card required • 14-day free trial • Cancel anytime</p>
           </motion.div>
         </div>
       </section>
@@ -642,11 +446,6 @@ export default function TestFlowLanding() {
                 <li>
                   <a href="#" className="hover:text-white">
                     Features
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Pricing
                   </a>
                 </li>
                 <li>

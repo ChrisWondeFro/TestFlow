@@ -30,11 +30,6 @@ const useCases = [
         significance: "p < 0.01 (highly significant)",
         recommendation: "Continue daily meditation practice",
       },
-      testimonial: {
-        name: "Alex Chen",
-        role: "Software Engineer",
-        quote: "I was skeptical about meditation, but TestFlow showed me clear evidence it was working for me.",
-      },
     },
   },
   {
@@ -57,11 +52,6 @@ const useCases = [
         ],
         significance: "p < 0.05 (significant)",
         recommendation: "Implement Pomodoro technique with 5-minute breaks",
-      },
-      testimonial: {
-        name: "Maya Johnson",
-        role: "Marketing Manager",
-        quote: "TestFlow helped me discover that Pomodoro sessions work incredibly well for my productivity style.",
       },
     },
   },
@@ -86,11 +76,6 @@ const useCases = [
         significance: "p < 0.01 (highly significant)",
         recommendation: "Use question-based subject lines for future campaigns",
       },
-      testimonial: {
-        name: "David Park",
-        role: "Email Marketing Specialist",
-        quote: "TestFlow's analysis gave us concrete data to improve our email strategy across all campaigns.",
-      },
     },
   },
   {
@@ -113,12 +98,6 @@ const useCases = [
         ],
         significance: "p < 0.01 (highly significant)",
         recommendation: "Continue daily stand-ups, limit to 15 minutes",
-      },
-      testimonial: {
-        name: "Sarah Rodriguez",
-        role: "Product Manager",
-        quote:
-          "TestFlow quantified what we suspected - our stand-ups were making a huge difference in team performance.",
       },
     },
   },
@@ -167,7 +146,7 @@ export function UseCaseTabs() {
                   <useCase.icon className="w-4 h-4" />
                   <span>{useCase.title}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Real-World Example</h3>
+                <h3 className="text-2xl font-bold mb-2">Example Scenario</h3>
                 <p className="text-gray-600">{useCase.description}</p>
               </motion.div>
 
@@ -222,6 +201,9 @@ export function UseCaseTabs() {
                         <div className="flex items-center gap-2 mb-4">
                           <CheckCircle className="w-5 h-5 text-green-500" />
                           <h4 className="font-bold text-green-800">Results Summary</h4>
+                          <span className="ml-auto text-xs font-medium text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
+                            Sample data
+                          </span>
                         </div>
 
                         <div className="p-3 bg-green-50 rounded-lg mb-4">
@@ -364,19 +346,6 @@ export function UseCaseTabs() {
                     </div>
                   </div>
                 </div>
-
-                <Card className="border-0 shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-gray-200 flex-shrink-0" />
-                      <div>
-                        <div className="font-medium">{activeCase?.example.testimonial.name}</div>
-                        <div className="text-sm text-gray-500 mb-2">{activeCase?.example.testimonial.role}</div>
-                        <div className="italic text-gray-700">"{activeCase?.example.testimonial.quote}"</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </motion.div>
             </div>
           </div>

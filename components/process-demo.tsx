@@ -299,6 +299,9 @@ export function ProcessDemo() {
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold">Data Collection</h3>
               <p className="text-gray-600">Track your experiment with our easy-to-use tools</p>
+              <span className="inline-block mt-2 text-xs font-medium text-gray-500 bg-gray-200 px-2 py-0.5 rounded">
+                Sample data
+              </span>
             </div>
 
             <div className="bg-white rounded-lg shadow-md p-6 border border-green-100">
@@ -360,6 +363,9 @@ export function ProcessDemo() {
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold">Results & Insights</h3>
               <p className="text-gray-600">Clear, actionable insights from your data</p>
+              <span className="inline-block mt-2 text-xs font-medium text-gray-500 bg-gray-200 px-2 py-0.5 rounded">
+                Sample data
+              </span>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
